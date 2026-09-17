@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #bb2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.tombol-keluar {
+    display: inline-block;
+    background-color: white;
+    color: #bb2;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.konten {
+    text-align: center;
+    padding: 20px;
+}
+
+.konten h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.kotak-gambar {
+    background-color: white;
+    width: 320px;
+    margin: 15px;
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.kotak-gambar img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.kotak-gambar h4 {
+    margin: 15px 0;
+    color: #444;
+}
+
+.tombol-download {
+    display: block;
+    background-color: #bb6;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.tombol-download:hover {
+    background-color: #bb2;
+}
