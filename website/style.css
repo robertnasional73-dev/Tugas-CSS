@@ -1,71 +1,245 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     background-color: #bb2;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 24px 40px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.header-text h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
 }
 
 .tombol-keluar {
     display: inline-block;
     background-color: white;
     color: #bb2;
-    padding: 5px 15px;
+    padding: 8px 20px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    white-space: nowrap;
 }
 
+.tombol-keluar:hover {
+    background-color: #333;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===== KONTEN ===== */
 .konten {
-    text-align: center;
-    padding: 20px;
+    flex: 1;
+    padding: 36px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.konten h3 {
-    margin-bottom: 20px;
+.konten-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.konten-header h3 {
+    margin: 0;
     color: #333;
+    font-size: 1.3rem;
+    border-left: 4px solid #bb2;
+    padding-left: 12px;
 }
 
+.badge {
+    background-color: #bb2;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* ===== GRID ===== */
+.grid-gambar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* ===== CARD ===== */
 .kotak-gambar {
     background-color: white;
-    width: 320px;
-    margin: 15px;
-    display: inline-block;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    vertical-align: top;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
 }
 
-.kotak-gambar img {
+.kotak-gambar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+}
+
+/* Image wrapper with overlay */
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background-color: #eee;
+}
+
+.img-wrapper img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s;
 }
 
-.kotak-gambar h4 {
-    margin: 15px 0;
-    color: #444;
+.kotak-gambar:hover .img-wrapper img {
+    transform: scale(1.07);
+}
+
+.img-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(187, 187, 34, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.kotak-gambar:hover .img-overlay {
+    opacity: 1;
+}
+
+.img-overlay span {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 2px solid white;
+    padding: 6px 18px;
+    border-radius: 20px;
+}
+
+/* Card body */
+.card-body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-body h4 {
+    margin: 0 0 4px 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.kategori {
+    margin: 0 0 12px 0;
+    color: #888;
+    font-size: 0.82rem;
 }
 
 .tombol-download {
     display: block;
-    background-color: #bb6;
+    background-color: #bb2;
     color: white;
-    padding: 10px;
+    padding: 9px 0;
+    text-align: center;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    font-size: 0.88rem;
+    border-radius: 8px;
+    margin-top: auto;
+    transition: background-color 0.2s, transform 0.2s;
+    letter-spacing: 0.5px;
 }
 
 .tombol-download:hover {
+    background-color: #998800;
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
     background-color: #bb2;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .grid-gambar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .konten {
+        padding: 24px 20px;
+    }
+    .header {
+        padding: 20px 20px;
+    }
+    .grid-gambar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-gambar {
+        grid-template-columns: 1fr;
+    }
 }
